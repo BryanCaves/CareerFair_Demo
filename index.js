@@ -7,6 +7,8 @@ const MessagingResponse = require('twilio').twiml.MessagingResponse;
 const app = express();
 app.use(urlencoded({ extended: false}));
 
+const PORT = 3000;
+
 const url = 'https://pokeapi.co/api/v2/pokemon';
 const pokemonCount = 151;
 
@@ -25,8 +27,8 @@ app.post('/sms', async (req, res) => {
     res.end(twiml.toString());
 });
 
-http.createServer(app).listen(3000, () => {
-    console.log('Server listening on port 3000');
+http.createServer(app).listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`);
 });
 
 function generateRandomNumber() {
