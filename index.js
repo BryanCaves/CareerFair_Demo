@@ -1,7 +1,7 @@
 const http = require('http');
 const express = require('express');
 const axios = require('axios');
-const { bodyParser, urlencoded } = require('body-parser');
+const { urlencoded } = require('body-parser');
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
 const app = express();
