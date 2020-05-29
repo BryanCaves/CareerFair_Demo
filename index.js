@@ -15,8 +15,6 @@ const pokemonCount = 151;   // Maximum limit of Pokemon. For this demo we will o
 
 var phoneSet = new Set();
 
-console.log(phoneSet);
-
 app.post('/sms', async (req, res) => {
     const twiml = new MessagingResponse();
 
