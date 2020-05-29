@@ -1,2 +1,4 @@
-# CareerFair_Demo
-Quick demo app for the ELC High School Career Fair
+# CareerFair Demo
+Demo app for the ELC High School Career Fair. Built in NodeJS using Twilio SMS
+
+
