@@ -6,7 +6,7 @@ const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
 const app = express();
 app.use(express.json());
-app.use(urlencoded({ extended: false}));
+app.use(urlencoded({ extended: true}));
 
 const PORT = 3000;
 
@@ -14,15 +14,14 @@ const url = 'https://pokeapi.co/api/v2/pokemon';    // Url which we will be call
 const pokemonCount = 151;   // Maximum limit of Pokemon. For this demo we will only be using the original 151
 
 var phoneSet = new Set();
-phoneSet.add("+13232732834");
 
 console.log(phoneSet);
 
 app.post('/sms', async (req, res) => {
     const twiml = new MessagingResponse();
 
-    const incomingPhone = req.body.from;
-    console.log(`Incoming message from ${req.body.From}: ${req.body.Body}`);
+    const incomingPhone = req.body.From;
+    console.log(`Incoming message from ${incomingPhone}: ${req.body.Body}`);
 
     if(phoneSet.has(incomingPhone)) {
         console.log(`Person with this phone number: ${incomingPhone} already received a Pokemon`);
